@@ -30,23 +30,48 @@
             
             <!-- Icona hamburger per dispositivi mobili -->
             <button class="hamburger" onclick="toggleMenu()" aria-label="Menu di navigazione" aria-expanded="false">
-                &#9776;
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             
             <nav class="menu" role="navigation" aria-label="Navigazione principale">
                 <a href="#introduzione" class="active">Chi Siamo</a>
                 <a href="#servizi">Servizi</a>
+                <a href="#galleria-centro">Il Nostro Centro</a>
                 <a href="#contatti">Contatto e Orari</a>
             </nav>
         </div>
     </header>
 
-    <!-- Sezione Hero con messaggio di benvenuto -->
-    <section class="benvenuti puzzo" aria-label="Benvenuto">
-        <div class="benvenuti-testo">
-            <p class="hero-line">Un'oasi di bellezza e benessere</p>
-            <p class="hero-subtitle">Dove ogni trattamento è un viaggio sensoriale studiato per esaltare la tua naturale luminosità</p>
-            <p class="hero-tagline">✨ Dettagli curati con passione · Risultati che parlano · Momenti indimenticabili ✨</p>
+    <!-- Sezione Hero con immagine della gerente -->
+    <section class="hero-section" aria-label="Benvenuto">
+        <div class="hero-container">
+            <!-- Immagini della gerente che cambiano -->
+            <div class="hero-image-container">
+                <div class="hero-image active">
+                    <img src="./Img/persona/1.jpeg" alt="Maria Elena Ortega - Fondatrice Nina Nails" loading="eager">
+                </div>
+                <div class="hero-image">
+                    <img src="./Img/persona/2.jpeg" alt="Maria Elena Ortega - Esperta in trattamenti estetici" loading="lazy">
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <!-- Testo Hero -->
+            <div class="hero-content">
+                <div class="hero-title-wrapper">
+                    <h1 class="hero-title">Nina Nails</h1>
+                    <p class="hero-subtitle-small">con Maria Elena Ortega</p>
+                    <p class="hero-subtitle-small">In collaborazione con <a href="https://instagram.com/mayraluxelashes" class="link-maira">Mayra</a></p>
+                </div>
+                <p class="hero-line">Un'oasi di bellezza e benessere</p>
+                <p class="hero-subtitle">Dove ogni trattamento è un viaggio sensoriale studiato per esaltare la tua naturale luminosità</p>
+                <div class="hero-cta">
+                    <a href="#contatti" class="btn-primary">Prenota Ora</a>
+                    <a href="#servizi" class="btn-secondary">Scopri i Servizi</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -107,129 +132,204 @@
             <div class="testo-introduzione">
                 <h2>Chi Siamo</h2>
                 <p>Con anni di esperienza e passione per l'estetica, Maria Elena Ortega ha creato Nina Nails per offrire un'esperienza di bellezza completa. Ci impegniamo a garantire risultati eccellenti in un ambiente rilassante e accogliente, dove ogni cliente è al centro della nostra attenzione.</p>
+                <p class="intro-highlight">La nostra missione è valorizzare la bellezza naturale di ogni persona attraverso trattamenti personalizzati e prodotti di alta qualità.</p>
             </div>
         </section>
     </div>
-
+    <!--  Aggiungere la scritta in collaborazione con maira nel p -->
     <!-- Sezione Servizi -->
-    <div class="puzzo">
+    <div class="cacca">
         <section class="servizi" id="servizi">
             <h2>I Nostri Servizi</h2>
+            <p class="servizi-intro">Scopri la nostra gamma completa di trattamenti professionali</p>
             
             <div class="servizi-lista">
                 <!-- Trattamenti Viso -->
                 <article class="toggle-section servizio">
+                   
                     <h3>Trattamento Viso Olistici</h3>
+                    <p class="servizio-preview">Cura professionale del viso con tecnologie avanzate</p>
                     <div class="moreText" id="trattamenti-viso">
-                        <p>
-                            • Pulizia viso base (con o senza vapozono) e massaggio<br>
-                            • Pulizia base, prezzo speciale studenti<br>
-                            • Pulizia viso con trattamento specifico per ogni tipo di pelle, con radiofrequenza<br>
-                            • Pulizia viso con trattamento modellante anti-age effetto lifting
-                        </p>
+                        <div class="servizio-details">
+                            <ul>
+                                <li>Pulizia viso base (con o senza vapozono) e massaggio</li>
+                                <li>Pulizia base, prezzo speciale studenti</li>
+                                <li>Pulizia viso con trattamento specifico per ogni tipo di pelle, con radiofrequenza</li>
+                                <li>Pulizia viso con trattamento modellante anti-age effetto lifting</li>
+                            </ul>
+                        </div>
                         <img src="./Img/Servizi/trattamento-viso-olistici.jpg" 
-                             style="width:70%; max-width:400px;" 
+                             style="width:100%; max-width:500px;" 
                              alt="Trattamento viso professionale" 
                              loading="lazy">
                     </div>
                     <button class="toggleButton bottone-visualizza" aria-expanded="false">
-                        Visualizza di più
+                        <span>Visualizza di più</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                 </article>
 
                 <!-- Ciglia e Sopracciglia -->
                 <article class="toggle-section servizio">
+                    
                     <h3>Ciglia e Sopracciglia</h3>
+                    <p class="servizio-preview">Definisci il tuo sguardo con trattamenti professionali</p>
                     <div class="moreText" id="ciglia">
-                        <p>
-                            • Regolazione sopracciglia<br>
-                            • Colorazione sopracciglia e ciglia<br>
-                            <strong>NOVITÀ!</strong> Laminazione ciglia con cheratina
-                        </p>
-                        <img src="./Img/Servizi/ciglia-sopracciglia1.jpg" 
-                             style="width:48%; max-width:250px;" 
-                             alt="Trattamento ciglia" 
-                             loading="lazy">
-                        <img src="./Img/Servizi/ciglia-sopracciglia2.jpg" 
-                             style="width:48%; max-width:250px;" 
-                             alt="Laminazione ciglia" 
-                             loading="lazy">
+                        <div class="servizio-details">
+                            <ul>
+                                <li>Regolazione sopracciglia</li>
+                                <li>Colorazione sopracciglia e ciglia</li>
+                                <li><strong>NOVITÀ!</strong> Laminazione ciglia con cheratina</li>
+                            </ul>
+                        </div>
+                        <div class="image-grid">
+                            <img src="./Img/Servizi/ciglia-sopracciglia1.jpg" 
+                                 alt="Trattamento ciglia" 
+                                 loading="lazy">
+                            <img src="./Img/Servizi/ciglia-sopracciglia2.jpg" 
+                                 alt="Laminazione ciglia" 
+                                 loading="lazy">
+                        </div>
                     </div>
                     <button class="toggleButton bottone-visualizza" aria-expanded="false">
-                        Visualizza di più
+                        <span>Visualizza di più</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                 </article>
 
                 <!-- Manicure e Pedicure -->
                 <article class="toggle-section servizio">
-                    <h3>Manicure, Pedicure e Smalto O.P.I.</h3>
+                  <h3>Manicure, Pedicure e Smalto O.P.I.</h3>
+                    <p class="servizio-preview">Cura completa di mani e piedi con prodotti premium</p>
                     <div class="moreText" id="mani-pidi">
-                        <p>
-                            • Smalto semipermanente piedi<br>
-                            • Gel piedi<br>
-                            • Manicure con trattamento Spa (con o senza smalto)<br>
-                            • Pedicure curativo Spa (con o senza smalto)
-                        </p>
-                        <img src="./Img/Servizi/manicure-pedicure1.jpg" 
-                             style="width:48%; max-width:250px;" 
-                             alt="Manicure professionale" 
-                             loading="lazy">
-                        <img src="./Img/Servizi/manicure-pedicure2.jpg" 
-                             style="width:48%; max-width:250px;" 
-                             alt="Pedicure Spa" 
-                             loading="lazy">
+                        <div class="servizio-details">
+                            <ul>
+                                <li>Smalto semipermanente piedi</li>
+                                <li>Gel piedi</li>
+                                <li>Manicure con trattamento Spa (con o senza smalto)</li>
+                                <li>Pedicure curativo Spa (con o senza smalto)</li>
+                            </ul>
+                        </div>
+                        <div class="image-grid">
+                            <img src="./Img/Servizi/manicure-pedicure1.jpg" 
+                                 alt="Manicure professionale" 
+                                 loading="lazy">
+                            <img src="./Img/Servizi/manicure-pedicure2.jpg" 
+                                 alt="Pedicure Spa" 
+                                 loading="lazy">
+                        </div>
                     </div>
                     <button class="toggleButton bottone-visualizza" aria-expanded="false">
-                        Visualizza di più
+                        <span>Visualizza di più</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                 </article>
 
                 <!-- Trattamenti Corpo -->
                 <article class="toggle-section servizio">
                     <h3>Trattamento Corpo Olistici</h3>
+                    <p class="servizio-preview">Benessere totale con massaggi e trattamenti dedicati</p>
                     <div class="moreText" id="corpo">
-                        <p>
-                            • Massaggio olistico con olio essenziale (1 ora)<br>
-                            • Massaggio reiki energetico relax (50 minuti)<br>
-                            • Linfodrenaggio con pressoterapia (50 minuti)<br>
-                            • Massaggio schiena (40 minuti)<br>
-                            • Peeling corpo totale con fango e termocoperta<br>
-                            • Trattamento anticellulite con radiofrequenza e cavitazione (5 sedute più 2 gratuite)
-                        </p>
+                        <div class="servizio-details">
+                            <ul>
+                                <li>Massaggio olistico con olio essenziale (1 ora)</li>
+                                <li>Massaggio reiki energetico relax (50 minuti)</li>
+                                <li>Linfodrenaggio con pressoterapia (50 minuti)</li>
+                                <li>Massaggio schiena (40 minuti)</li>
+                                <li>Peeling corpo totale con fango e termocoperta</li>
+                                <li>Trattamento anticellulite con radiofrequenza e cavitazione (5 sedute più 2 gratuite)</li>
+                            </ul>
+                        </div>
                         <img src="./Img/Servizi/trattamento-corpo-olistici.jpg" 
-                             style="width:70%; max-width:400px;" 
+                             style="width:100%; max-width:500px;" 
                              alt="Massaggio olistico" 
                              loading="lazy">
                     </div>
                     <button class="toggleButton bottone-visualizza" aria-expanded="false">
-                        Visualizza di più
+                        <span>Visualizza di più</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                 </article>
 
                 <!-- Depilazione -->
                 <article class="toggle-section servizio">
                     <h3>Depilazione con Cera a Base Naturale</h3>
+                    <p class="servizio-preview">Trattamenti delicati per una pelle liscia e morbida</p>
                     <div class="moreText" id="depilazione">
-                        <p>
-                            • Gamba intera<br>
-                            • Mezza gamba<br>
-                            • Ascelle<br>
-                            • Inguine<br>
-                            • Braccia<br>
-                            • Petto<br>
-                            • Schiena<br>
-                            • Sopracciglia<br>
-                            • Epilazione luce pulsata
-                        </p>
+                        <div class="servizio-details">
+                            <ul>
+                                <li>Gamba intera</li>
+                                <li>Mezza gamba</li>
+                                <li>Ascelle</li>
+                                <li>Inguine</li>
+                                <li>Braccia</li>
+                                <li>Petto</li>
+                                <li>Schiena</li>
+                                <li>Sopracciglia</li>
+                                <li>Epilazione luce pulsata</li>
+                            </ul>
+                        </div>
                         <img src="./Img/Servizi/depilazione.jpg" 
-                             style="width:70%; max-width:400px;" 
+                             style="width:100%; max-width:500px;" 
                              alt="Depilazione professionale" 
                              loading="lazy">
                     </div>
                     <button class="toggleButton bottone-visualizza" aria-expanded="false">
-                        Visualizza di più
+                        <span>Visualizza di più</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
                 </article>
+            </div>
+        </section>
+    </div>
+
+    <!-- NUOVA SEZIONE: Galleria del Centro -->
+    <div class="cacca">
+        <section class="galleria-centro" id="galleria-centro">
+            <h2>Il Nostro Centro</h2>
+            <p class="galleria-intro">Un ambiente curato nei minimi dettagli per il tuo comfort e relax</p>
+            
+            <div class="galleria-grid" id="galleria-grid">
+                <div class="galleria-item active" data-aos="fade-up">
+                    <div class="galleria-image-wrapper">
+                        <img src="./Img/Luogo/Lavoro3.jpeg" alt="Sala trattamenti Nina Nails" loading="lazy">
+                 
+                    </div>
+                </div>
+                
+                <div class="galleria-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="galleria-image-wrapper">
+                        <img src="./Img/Luogo/Lavoro4.jpeg" alt="Area manicure e pedicure" loading="lazy">
+           
+                    </div>
+                </div>
+                
+                <div class="galleria-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="galleria-image-wrapper">
+                        <img src="./Img/Luogo/Lavoro2.jpeg" alt="Zona relax Nina Nails" loading="lazy">
+
+                    </div>
+                </div>
+                
+                <div class="galleria-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="galleria-image-wrapper">
+                        <img src="./Img/Luogo/Lavoro1.jpeg" alt="Reception Nina Nails" loading="lazy">
+                    
+                    </div>
+                </div>
+                
+                <button class="galleria-nav-btn prev" onclick="changeGalleryImage(-1)" aria-label="Immagine precedente">&#10094;</button>
+                <button class="galleria-nav-btn next" onclick="changeGalleryImage(1)" aria-label="Immagine successiva">&#10095;</button>
             </div>
         </section>
     </div>
@@ -269,29 +369,65 @@
                 Ti aspettiamo da Nina Nails per rendere ogni visita speciale!
             </p>
             
-            <p style="margin-top: 2rem;">
-                <a href="tel:+41789444077" aria-label="Chiama Nina Nails">
-                    📞 Telefono: +41 78 944 40 77
-                </a>
-                <br>
-                <a href="mailto:maminena22@hotmail.com" aria-label="Invia email a Nina Nails">
-                    ✉️ Email: <span class="__cf_email__" data-cfemail="5d303c30343338333c6f6f1d353229303c3431733e3230">maminena22@hotmail.com</span>
-                </a>
-            </p>
-
+            <div class="contatti-info">
+                <div class="contatto-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <a href="tel:+41789444077" aria-label="Chiama Nina Nails">+41 78 944 40 77</a>
+                </div>
+                <div class="contatto-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:maminena22@hotmail.com" aria-label="Invia email a Nina Nails">maminena22@hotmail.com</a>
+                </div>
+            </div>
+<!--  Aggiungere Conntatti maira -->
             <h2 style="margin-top: 3rem;">Orari di Apertura</h2>
-            <div class="orari">
-                <p><strong>Lunedì - Venerdì:</strong> 8:00-12:00 / 13:00-18:00</p>
-                <p><strong>Sabato:</strong> 14:00-18:00</p>
-                <p><strong>Domenica:</strong> Chiuso</p>
+            <div class="orari-grid">
+                <div class="orario-item">
+                    <span class="giorno">Lunedì - Venerdì</span>
+                    <span class="ore">8:00-12:00 / 13:00-18:00</span>
+                </div>
+                <div class="orario-item">
+                    <span class="giorno">Sabato</span>
+                    <span class="ore">14:00-18:00</span>
+                </div>
+                <div class="orario-item chiuso">
+                    <span class="giorno">Domenica</span>
+                    <span class="ore">Chiuso</span>
+                </div>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Nina Nails | Tutti i diritti riservati.</p>
-        <p>Realizzato da <a href="tiscopola/famiglia.html">Web Development Innovations</a></p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./Img/Logo/logo.png" alt="Nina Nails Logo" class="footer-logo-img">
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2026 Nina Nails | Tutti i diritti riservati.</p>
+                <p>Realizzato da <a href="tiscopola/famiglia.html">Web Development Innovations</a></p>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

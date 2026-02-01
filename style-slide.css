@@ -1,12 +1,12 @@
 .slider_container {
     position: relative;
-    width: min(90vw, 900px);
-    height: clamp(300px, 40vw, 500px);
+    width: 100vw;
+    height: clamp(200px, 25vw, 320px);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem auto;
-    border-radius: 20px;
+    margin: 3rem 0;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     background: #fff;

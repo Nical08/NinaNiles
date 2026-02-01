@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeServices();
     initializeImageSlider();
     initializeHeaderScroll();
+    initializeHeroImageRotation();
     handleURLHash();
+    initializeGalleryAnimations();
 });
 
 // Responsive updates on resize (debounced)
@@ -69,6 +71,32 @@ document.querySelectorAll('.menu a').forEach(link => {
     });
 });
 
+// Hero Image Rotation
+function initializeHeroImageRotation() {
+    const heroImages = document.querySelectorAll('.hero-image');
+    
+    if (heroImages.length === 0) return;
+    
+    let currentHeroIndex = 0;
+    
+    function rotateHeroImage() {
+        // Remove active class from current image
+        heroImages[currentHeroIndex].classList.remove('active');
+        
+        // Move to next image
+        currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+        
+        // Add active class to next image
+        heroImages[currentHeroIndex].classList.add('active');
+    }
+    
+    // Only start auto-rotation if user hasn't indicated preference for reduced motion
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        // Rotate every 5 seconds
+        setInterval(rotateHeroImage, 5000);
+    }
+}
+
 // Services toggle functionality
 function initializeServices() {
     const toggleButtons = document.querySelectorAll('.toggleButton');
@@ -78,6 +106,7 @@ function initializeServices() {
             const section = this.parentElement;
             const moreText = section.querySelector('.moreText');
             const isExpanded = moreText.classList.contains('expanded');
+            const buttonText = this.querySelector('span');
             
             if (isExpanded) {
                 // Collapse
@@ -88,18 +117,18 @@ function initializeServices() {
                 }, 10);
                 
                 moreText.classList.remove('expanded');
-                section.classList.remove('expanded'); // Remove from parent too
+                section.classList.remove('expanded');
                 section.style.width = '';
-                this.textContent = 'Visualizza di più';
+                if (buttonText) buttonText.textContent = 'Visualizza di più';
                 this.setAttribute('aria-expanded', 'false');
             } else {
                 // Expand
                 moreText.classList.add('expanded');
-                section.classList.add('expanded'); // Add to parent for grid control
+                section.classList.add('expanded');
                 moreText.style.height = `${moreText.scrollHeight}px`;
                 moreText.style.opacity = '1';
                 section.style.width = '100%';
-                this.textContent = 'Visualizza di meno';
+                if (buttonText) buttonText.textContent = 'Visualizza di meno';
                 this.setAttribute('aria-expanded', 'true');
                 
                 // Remove height after transition for dynamic content
@@ -222,6 +251,34 @@ function initializeHeaderScroll() {
     });
 }
 
+// Gallery animations on scroll
+function initializeGalleryAnimations() {
+    const galleryItems = document.querySelectorAll('.galleria-item');
+    
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        galleryItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+    }
+}
+
 // Handle URL hash for direct service links
 function handleURLHash() {
     const hash = window.location.hash;
@@ -298,6 +355,34 @@ if ('IntersectionObserver' in window) {
     });
 }
 
+// Active menu link on scroll
+function updateActiveMenuLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const menuLinks = document.querySelectorAll('.menu a[href^="#"]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        menuLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+updateActiveMenuLink();
+
 // Form validation helper (if you add a contact form later)
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -324,6 +409,25 @@ if ('loading' in HTMLImageElement.prototype) {
     images.forEach(img => imageObserver.observe(img));
 }
 
+// Parallax effect for hero section (subtle)
+
+// Gallery navigation for mobile
+let currentGalleryIndex = 0;
+
+function changeGalleryImage(direction) {
+    const items = document.querySelectorAll('.galleria-item');
+    
+    // Remove active class from current item
+    items[currentGalleryIndex].classList.remove('active');
+    
+    // Update index
+    currentGalleryIndex = (currentGalleryIndex + direction + items.length) % items.length;
+    
+    // Add active class to new item
+    items[currentGalleryIndex].classList.add('active');
+}
+
 // Console message for developers
 console.log('%c🌸 Nina Nails Website', 'color: #ff98bb; font-size: 20px; font-weight: bold;');
 console.log('%cDeveloped with ❤️ by Web Development Innovations', 'color: #666; font-size: 12px;');
+console.log('%cEnhanced responsive design • Modern UI/UX • Optimized performance', 'color: #999; font-size: 10px;');
