@@ -380,7 +380,6 @@ header.scrolled {
     height: clamp(50px, 8vh, 70px);
     width: auto;
     transition: var(--transition-smooth);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
 .logo:hover {
