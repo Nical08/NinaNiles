@@ -12,8 +12,9 @@
     --text-dark: #2c2c2c;
     --text-medium: #4A4A4A;
     --text-light: #666;
-    --background-white: rgba(255, 255, 255, 1);
-    --background-gray: rgba(255, 255, 255, 1);
+    --background-white: rgba(255, 255, 255, 0.95);
+    --background-white-nav: rgba(255, 255, 255, 1);
+    --background-gray: rgba(245, 245, 245, 0.98);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -344,7 +345,7 @@ header {
     align-items: center;
     padding: 1rem 5%;
     width: 100%;
-    background: var(--background-white);
+    background: var(--background-white-nav);
     backdrop-filter: blur(10px);
     z-index: 1000;
     position: sticky;
@@ -1361,5 +1362,4 @@ footer {
         --text-dark: #000;
         --text-medium: #000;
     }
-
 }
