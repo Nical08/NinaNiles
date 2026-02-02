@@ -14,7 +14,7 @@
     --text-light: #666;
     --background-white: rgba(255, 255, 255, 0.95);
     --background-white-nav: rgba(255, 255, 255, 1);
-    --background-gray: rgba(245, 245, 245, 0.98);
+    --background-gray: rgba(245, 245, 245, 0.95);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -1363,3 +1363,4 @@ footer {
         --text-medium: #000;
     }
 }
+
