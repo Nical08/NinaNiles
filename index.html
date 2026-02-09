@@ -52,16 +52,25 @@
             align-items: center;
         }
         
-        @media (max-width: 768px) {
+        /* Mobile language selector - nascosto di default */
+        .mobile-lang {
+            display: none;
+        }
+        
+        @media (max-width: 1250px) {
+            /* Nascondi selettore desktop */
             .lang-selector {
-                display: none;
+                display: none !important;
             }
             
+            /* Mostra selettore mobile dentro il menu */
             .mobile-lang {
                 display: flex;
                 gap: 10px;
-                margin-top: 20px;
                 justify-content: center;
+                padding-top: 1rem;
+                margin-top: 1rem;
+                border-top: 1px solid rgba(255, 152, 187, 0.2);
             }
         }
     </style>
@@ -87,15 +96,21 @@
                     <a href="#servizi" data-it="Servizi" data-de="Dienstleistungen" data-es="Servicios">Servizi</a>
                     <a href="#galleria-centro" data-it="Il Nostro Centro" data-de="Unser Zentrum" data-es="Nuestro Centro">Il Nostro Centro</a>
                     <a href="#contatti" data-it="Contatto e Orari" data-de="Kontakt und Öffnungszeiten" data-es="Contacto y Horarios">Contatto e Orari</a>
+                    
+                    <!-- Selettore lingua mobile - appare solo su mobile dentro il menu -->
+                    <div class="mobile-lang">
+                        <button class="lang-btn active" onclick="setLanguage('it')">IT</button>
+                        <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+                        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+                    </div>
+                </nav>
                 
-                
-                <!-- Selettore lingua -->
+                <!-- Selettore lingua desktop -->
                 <div class="lang-selector">
                     <button class="lang-btn active" onclick="setLanguage('it')">IT</button>
                     <button class="lang-btn" onclick="setLanguage('de')">DE</button>
                     <button class="lang-btn" onclick="setLanguage('es')">ES</button>
                 </div>
-                </nav>
             </div>
         </div>
     </header>
@@ -434,7 +449,7 @@
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                    <a href="mailto:maminena22@hotmail.com" aria-label="Invia email a Nina Nails">maminena22@hotmail.com</a>
+                    <a href="/cdn-cgi/l/email-protection#95f8f4f8fcfbf0fbf4a7a7d5fdfae1f8f4fcf9bbf6faf8" aria-label="Invia email a Nina Nails"><span class="__cf_email__" data-cfemail="3954585450575c57580b0b7951564d54585055175a5654">[email&#160;protected]</span></a>
                 </div>
             </div>
 
@@ -481,15 +496,8 @@
         </div>
     </footer>
 
-    <!-- Selettore lingua mobile (nascosto nel menu hamburger) -->
-    <div class="mobile-lang" style="display: none;">
-        <button class="lang-btn active" onclick="setLanguage('it')">IT</button>
-        <button class="lang-btn" onclick="setLanguage('de')">DE</button>
-        <button class="lang-btn" onclick="setLanguage('es')">ES</button>
-    </div>
-
     <!-- Script per gestione multilingua -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang = 'it';
         
         function setLanguage(lang) { 
@@ -519,15 +527,4 @@
             // Chiudi menu mobile se aperto
             const menu = document.querySelector('.menu');
             if(menu && menu.classList.contains('active')) {
-                toggleMenu();
-            }
-        }
-        
-        // Imposta italiano come lingua predefinita al caricamento
-        document.addEventListener('DOMContentLoaded', function() {
-            setLanguage('it');
-        });
-    </script>
-</body>
-</html>
-
+                togg
