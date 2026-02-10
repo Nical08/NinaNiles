@@ -1,7 +1,3 @@
-Ecco una proposta per un file **README.md** professionale, strutturato e pronto per essere inserito nel repository del progetto. Ho organizzato le informazioni in modo che siano chiare sia per chi legge il codice, sia per chi vuole capire le finalità del sito.
-
----
-
 # Nina Nails - Locarno
 
 Benvenuti nel repository ufficiale di **Nina Nails**, un sito web vetrina realizzato per il centro estetico di Maria Elena Ortega situato a Locarno, Svizzera.
@@ -61,7 +57,3 @@ git clone [URL-del-tuo-repo]
 ---
 
 © 2026 **Nina Nails**. Sviluppato con passione da **Web Development Innovations**.
-
----
-
-**Ti serve aiuto per aggiungere una sezione specifica sulle istruzioni tecniche (come l'installazione di eventuali dipendenze) o va bene questa struttura descrittiva?**
